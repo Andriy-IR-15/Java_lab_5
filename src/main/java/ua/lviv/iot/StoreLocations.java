@@ -9,8 +9,10 @@ import java.util.regex.Pattern;
 
 public class StoreLocations {
 
-    public static ArrayList<String> findLocations(String filePath) throws IOException {
+    public ArrayList<String> findLocations() throws IOException {
         ArrayList<String> locations = new ArrayList<>();
+
+        String filePath = "stores.txt";
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line = reader.readLine();
         while (line != null) {
@@ -27,9 +29,9 @@ public class StoreLocations {
         return locations;
     }
 
-    public static void main(String[] args) {
+    public void printLocations() {
         try {
-            ArrayList<String> locations = findLocations("stores.txt");
+            ArrayList<String> locations = findLocations();
             for (String location : locations) {
                 System.out.println(location);
             }
